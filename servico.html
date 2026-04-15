@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="imagens/images.png" type="image/x-icon">
+    <title>Landing Page - Bernardo Vitral</title>
+    <link rel="stylesheet" href="estilo.css">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+
+:root {
+  --cor-destaque-cabecalho: #0cc;
+  --cor-fundo-pagina:       #0d0d1a;
+  --cor-fundo-conteudo:     #13132b;
+  --cor-fundo-aside:        #1a1a35;
+  --cor-texto-principal:    #e8e8f0;
+  --cor-texto-secundario:   #9999bb;
+  --cor-barra-navegacao:    #1e1e42;
+  --cor-branco:             #ffffff;
+  --cor-acento:             #0cc;
+  --cor-acento-hover:       #00ffee;
+  --fonte-titulo:           'Syne', sans-serif;
+  --fonte-corpo:            'DM Sans', sans-serif;
+  --raio:                   10px;
+  --sombra:                 0 4px 32px rgba(0, 204, 204, 0.08);
+}
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family:Arial, Helvetica, sans-serif;
+  background-color: var(--cor-fundo-pagina);
+  color: var(--cor-texto-principal);
+  font-size: 16px;
+  line-height: 1.7;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+header {
+  background-color: var(--cor-fundo-conteudo);
+  border-bottom: 2px solid var(--cor-acento);
+  padding: 36px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(0, 204, 204, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+header h1 {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+  font-weight: 800;
+  color: var(--cor-branco);
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+header h1 span {
+  color: var(--cor-acento);
+}
+
+
+nav {
+  background-color: var(--cor-fundo-conteudo);
+  border-bottom: 1px solid rgba(0, 204, 204, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 6px 12px;
+}
+
+.menu li { position: relative; }
+
+.menu > li > a {
+  display: block;
+  padding: 10px 22px;
+  color: var(--cor-texto-secundario);
+  text-decoration: none;
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--raio);
+  transition: color 0.2s, background 0.2s;
+}
+
+.menu > li > a:hover,
+.menu > li > a.ativo {
+  background-color: rgba(0, 204, 204, 0.1);
+  color: var(--cor-acento);
+}
+
+
+main {
+  flex: 1;
+  max-width: 820px;
+  width: 100%;
+  margin: 48px auto 0;
+  padding: 0 24px 60px;
+}
+ 
+main h2 {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--cor-branco);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(0, 204, 204, 0.2);
+}
+ 
+main h3 {
+  font-family: var(--fonte-titulo);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--cor-acento);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 36px 0 12px;
+}
+ 
+main p {
+  color: var(--cor-texto-secundario);
+  font-size: 1.05rem;
+  max-width: 640px;
+  margin-bottom: 12px;
+}
+a {
+  color: var(--cor-acento);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover { color: var(--cor-acento-hover); }
+
+main p strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--cor-fundo-aside);
+  border: 1px solid rgba(0, 204, 204, 0.18);
+  border-left: 4px solid var(--cor-acento);
+  border-radius: var(--raio);
+  padding: 12px 18px;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  color: var(--cor-texto-principal);
+  box-shadow: var(--sombra);
+}
+
+
+main img {
+  display: block;
+  max-width: 100%;
+  border-radius: var(--raio);
+  border: 1px solid rgba(0, 204, 204, 0.18);
+  margin: 16px 0;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+
+main img[alt*="Foto"] {
+  width: 1300px;
+  height: 500px;
+  border-radius: 0%;
+  border: 3px solid var(--cor-acento);
+  box-shadow: 0 0 0 6px rgba(0, 204, 204, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 0.97rem;
+  border-radius: var(--raio);
+  overflow: hidden;
+  border: none !important;
+}
+
+thead tr:first-child th {
+  background-color: var(--cor-acento);
+  color: var(--cor-fundo-pagina);
+  font-family: var(--fonte-titulo);
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 14px 20px;
+  text-align: center;
+}
+
+thead tr:last-child th {
+  background-color: var(--cor-barra-navegacao);
+  color: var(--cor-texto-secundario);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 204, 204, 0.15);
+}
+
+thead tr:last-child th:last-child { text-align: right; }
+
+tbody tr {
+  border-bottom: 1px solid rgba(0, 204, 204, 0.07);
+  transition: background 0.15s;
+}
+
+tbody tr:hover { background-color: rgba(0, 204, 204, 0.04); }
+
+tbody td {
+  padding: 14px 20px;
+  color: var(--cor-texto-secundario);
+}
+
+tbody td:first-child {
+  color: var(--cor-texto-principal);
+  font-weight: 500;
+}
+
+tbody td:last-child {
+  text-align: right;
+  color: var(--cor-acento);
+  font-weight: 600;
+}
+
+tbody tr:last-child td {
+  background-color: var(--cor-barra-navegacao);
+  text-align: center;
+  padding: 14px;
+  border-bottom: none;
+}
+
+tbody tr:last-child td a {
+  font-family: var(--fonte-titulo);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+
+aside {
+  max-width: 820px;
+  width: 100%;
+  margin: 32px auto;
+  padding: 0 24px;
+}
+
+aside > div,
+aside {
+  background-color: var(--cor-fundo-aside);
+  border: 1px solid rgba(0, 204, 204, 0.18);
+  border-left: 4px solid var(--cor-acento);
+  border-radius: var(--raio);
+  padding: 24px 28px;
+  box-shadow: var(--sombra);
+}
+
+aside h3 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--cor-acento);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+aside p {
+  color: var(--cor-texto-secundario);
+  font-size: 0.97rem;
+}
+
+
+footer{
+  background-color: var(--cor-fundo-conteudo);
+  border-top: 1px solid rgba(0, 204, 204, 0.15);
+  color: var(--cor-texto-secundario);
+  text-align: center;
+  padding: 20px 24px;
+  font-size: 0.85rem;
+  margin-top: auto;
+}
+
+
+@media (max-width: 600px) {
+  header { padding: 24px 16px; }
+
+  .menu > li > a {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+  }
+
+  main,
+  aside {
+    padding: 0 16px;
+  }
+
+  aside > div,
+  aside {
+    padding: 18px 20px;
+  }
+
+  thead tr:last-child th:last-child { text-align: left; }
+  tbody td:last-child { text-align: left; }
+}</style>
+</head>
+
+<body>
+    <header>
+        <h1>Landing Page Bernardo Vitral</h1>
+    </header>
+
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="servico.html">Serviços</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Currículo:</h2>
+        <p>Capacitado a fazer e criar softwares para indústrias, hospitais, bancos, restaurantes, bibliotecas e livrarias.</p>
+        <p><strong>ACESSE O MEU GITHUB:
+            <a href="https://github.com/bernardo-vitral18/SI1N-CSW2026-1" target="_blank">GITHUB de Bernardo</a>
+        </strong></p>
+        <img src="imagens/imagem-github.png" width="600" alt="Foto do GITHUB de Bernardo Vitral">
+
+        <h3>Tipos de Serviços:</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th colspan="2">Serviço</th>
+                    <th colspan="2">Valor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2">Site com 1 a 2 páginas</td>
+                    <td colspan="2">R$ 500,00</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Site com 3 a 5 páginas</td>
+                    <td colspan="2">R$ 1.000,00</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Site com 5 ou mais páginas</td>
+                    <td colspan="2">R$ 2.000,00</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Site Dinâmico</td>
+                    <td colspan="2">R$ 2.500,00</td>
+                </tr>
+                <tr>
+                    <td colspan="2">Site c/ páginas avançadas</td>
+                    <td colspan="2">R$ 3.000,00</td>
+                </tr>
+                <tr>
+                    <td colspan="4"><a href="contato.html">Formulário de Serviços</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>© 2026 Landing Page Bernardo Vitral - Todos os direitos reservados.</footer>
+
+</body>
+</html>
